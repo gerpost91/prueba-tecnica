@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/services.index';
-import { Router } from '@angular/router';
+import { IUser } from '../../models/user';
 
 
 @Component({
@@ -11,30 +11,25 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
 
 
-  usuarios: any = [];
+  usuarios: IUser [] = [];
 
-  constructor(private user: UserService, private router: Router) { }
+  constructor(private user: UserService) { }
 
   ngOnInit() {
     this.getAllusers();
   }
 
-
-  /*
+  /*************************
   Optener todos los usuarios
-  **/
+  **************************/
   getAllusers() {
     this.user.getUsers().subscribe((data: any) => {
-      this.user = data.users;
-      this.usuarios = this.user;
+      this.usuarios = data.users;
     });
   }
 
 
-  verUsuario(id: number) {
-  console.log(id);
-    // this.router.navigate(['/user', id]);
-  }
+
 
 
 

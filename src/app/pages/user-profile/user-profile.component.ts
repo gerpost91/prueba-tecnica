@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../services/services.index';
 import { ActivatedRoute } from '@angular/router';
+import { IUser } from '../../models/user';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,25 +9,22 @@ import { ActivatedRoute } from '@angular/router';
   styles: [
   ]
 })
-export class UserProfileComponent implements OnInit {
+export class UserProfileComponent {
 
-  usuario: any;
+  usuario: IUser;
 
-  constructor(private user: UserService, private router: ActivatedRoute) { }
-
-
-  ngOnInit(): void {
-    // pasa por url el id
+  constructor(private user: UserService, private router: ActivatedRoute) {
+    // toma el parametro de la peticiony ejecuta la funcion get user pasanfo este parametro
     this.router.params.subscribe(params => {
       this.getUser(params.id);
     });
   }
 
-
-  getUser(id: any) {
+  // obtien el usuario desde el servicio
+  getUser(id: number) {
     this.user.getUser(id).subscribe((data: any) => {
       this.usuario = data.user;
-      console.log(this.user);
+      console.log('data', this.usuario);
     });
 
   }

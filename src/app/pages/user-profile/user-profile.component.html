@@ -1,1 +1,29 @@
-<p>user-profile works!</p>
+<div class="card">
+  <div class="card-body">
+
+    <div class="card-tittle d-flex justify-content-center">
+      <p class="h2">
+        Datos de usuarios
+      </p>
+    </div>
+      <div class="row mt-4 mb-5">
+
+        <!-- usuario foto -->
+        <div class="col col-md-6 d-flex justify-content-center">
+          <img [src]="usuario.image" class="rounded-circle" alt="foto de perfil" width="250" height="250">
+        </div>
+        <!-- usuario foto FIN-->
+
+        <!-- Usuario info -->
+        <div class="col col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre: {{usuario.name}} {{usuario.surname}} </li>
+            <li class="list-group-item">Correo: {{usuario.email}} </li>
+            <li class="list-group-item">Fecha de Creación: {{usuario.created_at | date}} </li>
+            <li class="list-group-item">Ultima Actuaización: {{usuario.created_at | date}} </li>
+          </ul>
+  <!-- Usuario info FIN-->
+        </div>
+      </div>
+  </div>
+</div>
