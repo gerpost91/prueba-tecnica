@@ -1,34 +1,34 @@
 
+// dependencias principales
 import { NgModule } from '@angular/core';
 import { PAGES_ROUTES } from './pages.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
+// dependencias secundatias
 import { SharedModule } from '../shared/shared.module';
 
-import { FormsModule } from '@angular/forms';
-
-
-// ng2-charts
-import { ChartsModule } from 'ng2-charts';
-
+// componentes
 import { PagesComponent } from './pages.component';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
-
-// temporal
-import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
-import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+// componentes
 import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { HelpComponent } from './help/help.component';
+
 
 
 @NgModule({
   declarations: [
     PagesComponent,
     DashboardComponent,
-    IncrementadorComponent,
-    GraficoDonaComponent,
-    AccountSettingComponent
+    AccountSettingComponent,
+    UserProfileComponent,
+    EditUserComponent,
+    HelpComponent
 
   ],
   exports: [
@@ -36,10 +36,11 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
     AccountSettingComponent
   ],
   imports: [
-    SharedModule,
     PAGES_ROUTES,
+    SharedModule,
     FormsModule,
-    ChartsModule
+    HttpClientModule,
+    CommonModule
   ]
 })
 export class PagesModule { }
