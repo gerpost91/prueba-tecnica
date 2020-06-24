@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 
 import { SettingsService } from './settings/settings.service';
 import { UserService } from './user/user.service';
+import { LogginService } from './user/loggin.service';
+
 
 
 
@@ -12,7 +14,8 @@ import { UserService } from './user/user.service';
   declarations: [],
   providers: [
     SettingsService,
-    UserService
+    UserService,
+    LogginService,
   ],
   imports: [
     CommonModule

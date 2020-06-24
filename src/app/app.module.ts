@@ -7,6 +7,7 @@ import { APP_ROUTES } from './app.routes';
 // Modulos
 import { PagesModule } from './pages/pages.module';
 
+
 // temporal
 import { FormsModule } from '@angular/forms';
 
@@ -17,8 +18,7 @@ import { RegisterComponent } from './login/register.component';
 
 // Modulo que indeza he importa todos los servicios
 import { ServicesModule } from './services/services.module';
-
-
+import { HttpClientModule} from '@angular/common/http';
 
 
 
@@ -33,7 +33,8 @@ import { ServicesModule } from './services/services.module';
     APP_ROUTES,
     PagesModule,
     FormsModule,
-    ServicesModule
+    ServicesModule,
+    HttpClientModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
