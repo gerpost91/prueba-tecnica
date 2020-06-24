@@ -1,4 +1,5 @@
 
+// esta interface se utiliza para los que se reciben de usuarios
 export interface IUser {
   id?: number;
   name: string;
