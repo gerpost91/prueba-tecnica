@@ -26,10 +26,6 @@ export class UserProfileComponent {
       this.usuario = data.user;
       console.log('data', this.usuario);
     });
-
   }
-
-
-
 
 }

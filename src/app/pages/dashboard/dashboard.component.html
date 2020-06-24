@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card animated bounceInUp">
   <div class="row">
     <div class="col d-flex justify-content-center mb-4 mt-3">
       <p class="h3">
@@ -22,8 +22,8 @@
         <td>{{usuario.email}}</td>
         <td>{{usuario.role}}</td>
         <td>
-          <a [routerLink]="['/usuario',usuario.id]"class="btn btn-danger mr-md-1">Ver</a>
-          <a [routerLink]="['/usuario/editar',usuario.id]" class="btn btn-danger ml-md-1">Editar</a>
+          <a [routerLink]="['/usuario',usuario.id]"class="btn btn-outline-danger mr-md-1  btn-rounded">Ver</a>
+          <a [routerLink]="['/usuario/editar',usuario.id]" class="btn btn-outline-danger ml-md-1  btn-rounded">Editar</a>
         </td>
       </tr>
     </tbody>
