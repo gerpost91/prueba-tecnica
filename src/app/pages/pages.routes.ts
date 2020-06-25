@@ -15,11 +15,11 @@ const pagesRoutes: Routes = [
     path: '',
     component: PagesComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
-      { path: 'usuario/editar', component: EditUserComponent },
-      { path: 'usuario/:id', component: UserProfileComponent },
-      { path: 'ayuda', component: HelpComponent },
-      { path: 'app-settings', component: AccountSettingComponent },
+      { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Listado' } },
+      { path: 'usuario/editar', component: EditUserComponent, data: { titulo: 'Editar' } },
+      { path: 'usuario/:id', component: UserProfileComponent, data: { titulo: 'Detalle de usuario' } },
+      { path: 'ayuda', component: HelpComponent, data: { titulo: 'Ayuda' } },
+      { path: 'app-settings', component: AccountSettingComponent, data: { titulo: 'settings' } },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ], canActivate: [AutenticationGuard]
   }

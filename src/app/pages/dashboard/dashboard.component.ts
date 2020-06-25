@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UserService } from '../../services/services.index';
 import { IUser } from '../../models/user';
 
@@ -8,13 +8,12 @@ import { IUser } from '../../models/user';
   templateUrl: './dashboard.component.html',
   styles: []
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit{
 
 
-  usuarios: IUser [] = [];
+  usuarios: IUser[] = [];
 
   constructor(private user: UserService) { }
-
   ngOnInit() {
     this.getAllusers();
   }
@@ -27,11 +26,5 @@ export class DashboardComponent implements OnInit {
       this.usuarios = data.users;
     });
   }
-
-
-
-
-
-
 
 }
