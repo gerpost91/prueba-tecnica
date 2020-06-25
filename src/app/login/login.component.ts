@@ -3,6 +3,8 @@ import { UsuarioLogin } from '../models/usuario.login';
 import { NgForm } from '@angular/forms';
 import { LogginService } from '../services/services.index';
 import { Router } from '@angular/router';
+// iniliciador de plugins
+declare function init_plugins();
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,8 @@ export class LoginComponent implements OnInit {
   recordame: true;
   errorMessage: boolean;
 
+
+
   constructor(private login: LogginService, private route: Router) {
     if (localStorage.getItem('email')) {
       this.usuario.email = localStorage.getItem('email');
@@ -22,6 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    init_plugins();
     this.usuario = new UsuarioLogin();
   }
 
@@ -46,5 +51,6 @@ export class LoginComponent implements OnInit {
     );
 
   }
+
 
 }
