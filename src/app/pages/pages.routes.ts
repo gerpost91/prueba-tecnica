@@ -6,23 +6,24 @@ import { AccountSettingComponent } from './account-setting/account-setting.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { HelpComponent } from './help/help.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { AutenticationGuard } from '../guard/autentication.guard';
 
 
 
 const pagesRoutes: Routes = [
-    {
-        path: '',
-        component: PagesComponent,
-        children: [
-            { path: 'dashboard', component: DashboardComponent },
-            { path: 'usuario/:id', component: UserProfileComponent },
-            { path: 'usuario/editar/:id', component: EditUserComponent },
-            { path: 'ayuda', component: HelpComponent},
-            { path: 'app-settings', component: AccountSettingComponent },
-            { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
-        ]
-    }
+  {
+    path: '',
+    component: PagesComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'usuario/:id', component: UserProfileComponent },
+      { path: 'usuario/editar/:id', component: EditUserComponent },
+      { path: 'ayuda', component: HelpComponent },
+      { path: 'app-settings', component: AccountSettingComponent },
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
+    ], canActivate: [AutenticationGuard]
+  }
 ];
 
 
-export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
+export const PAGES_ROUTES = RouterModule.forChild(pagesRoutes);
