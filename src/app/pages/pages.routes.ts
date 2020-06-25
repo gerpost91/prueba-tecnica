@@ -16,7 +16,7 @@ const pagesRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'usuario', component: UserProfileComponent },
+      { path: 'usuario/:id', component: UserProfileComponent },
       { path: 'usuario/editar', component: EditUserComponent },
       { path: 'ayuda', component: HelpComponent },
       { path: 'app-settings', component: AccountSettingComponent },
