@@ -16,8 +16,8 @@ const pagesRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'usuario/:id', component: UserProfileComponent },
-      { path: 'usuario/editar/:id', component: EditUserComponent },
+      { path: 'usuario', component: UserProfileComponent },
+      { path: 'usuario/editar', component: EditUserComponent },
       { path: 'ayuda', component: HelpComponent },
       { path: 'app-settings', component: AccountSettingComponent },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
