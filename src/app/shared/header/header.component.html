@@ -43,8 +43,15 @@
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.png" alt="user" class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right animated fadeIn">
                         <ul class="dropdown-user">
+                            <!-- datos de usuario -->
+                            <li class="ml-2"><i class="fa fa-user" aria-hidden="true"></i>
+                              {{usuario.name}} &nbsp;{{usuario.surname}}
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <!-- Setting -->
                             <li><a href="#/usuario/editar" ><i class="ti-settings"></i> Account Setting</a></li>
                             <li role="separator" class="divider"></li>
+                            <!-- logout -->
                             <li (click)="logOut()"><a><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </div>

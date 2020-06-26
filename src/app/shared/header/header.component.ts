@@ -10,15 +10,21 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  usuario: any;
+
   constructor(private login: LogginService, private router: Router) {
 
-  }
-    ngOnInit() {
-    }
-
-    logOut(){
-      this.login.logOut();
-      this.router.navigateByUrl('/login');
+    if (localStorage.getItem('usuario')) {
+      this.usuario = JSON.parse(localStorage.getItem('usuario'));
     }
 
   }
+  ngOnInit() {
+  }
+
+  logOut() {
+    this.login.logOut();
+    this.router.navigateByUrl('/login');
+  }
+
+}

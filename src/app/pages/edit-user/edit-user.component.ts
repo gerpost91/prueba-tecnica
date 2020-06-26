@@ -9,23 +9,33 @@ import { NgForm } from '@angular/forms';
   styles: [
   ]
 })
-export class EditUserComponent  implements OnInit{
+export class EditUserComponent implements OnInit {
 
   usuario: UsuarioLogin;
   errorMessage: boolean;
   succesMessage: boolean;
   terminos = false;
+  usuarioCache: any;
 
 
 
-  constructor(private login: LogginService) { }
+  constructor(private login: LogginService) {
+    if (localStorage.getItem('usuario')) {
+      this.usuarioCache = JSON.parse(localStorage.getItem('usuario'));
+    }
+  }
 
   ngOnInit() {
     this.usuario = new UsuarioLogin();
+    this.usuario.nombre = this.usuarioCache.name;
+    this.usuario.apellido = this.usuarioCache.surname;
+    this.usuario.email = this.usuarioCache.email;
   }
 
 
   enviar(form: NgForm) {
+    console.log(form);
+
     if (form.invalid) {
       return;
     }
