@@ -3,6 +3,8 @@ import { UsuarioLogin } from '../models/usuario.login';
 import { NgForm } from '@angular/forms';
 import { LogginService } from '../services/services.index';
 import { Router } from '@angular/router';
+// decodifica token
+import * as jwt_decode from 'jwt-decode';
 // iniliciador de plugins
 declare function init_plugins();
 
@@ -40,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.errorMessage = true;
       }
       else {
-        localStorage.setItem('usuario', JSON.stringify(this.usuario.email));
+        localStorage.setItem('usuario', JSON.stringify(this.getDecodedAccessToken(resp)));
         console.log('usuario logeado');
         this.route.navigateByUrl('/dashboard');
         return false;
@@ -48,6 +50,19 @@ export class LoginComponent implements OnInit {
     },
     );
 
+  }
+
+  /*************************
+  * decodificar token
+  ***********************/
+  getDecodedAccessToken(token: any): any {
+    try {
+      return jwt_decode(token);
+    }
+    catch (Error) {
+      console.log('no se puedo decodificar el tken');
+      return null;
+    }
   }
 
 
