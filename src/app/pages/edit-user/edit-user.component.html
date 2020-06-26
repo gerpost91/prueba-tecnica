@@ -5,42 +5,42 @@
 
       <!-- inicio fomrulario -->
       <div class="col col-md-10">
-        <form class="form-material m-t-40" (ngSubmit)="enviar(f)" #f="ngForm">
+        <form class="form-material m-t-40" id="loginform"  (ngSubmit)="enviar(f)" #f="ngForm">
 
           <!-- name -->
           <div class="form-group">
             <label>Nombre del usuario</label>
-            <input type="text" class="form-control form-control-line" [(ngModel)]="usuario.nombre" name="nombre">
+            <input type="text" required class="form-control form-control-line" [(ngModel)]="usuario.nombre" name="nombre">
             <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['nombre'].errors">
-              Es necesario introducir un nombre</span>
+              Este campo no puede quedar vacio</span>
           </div>
           <!-- name -->
 
           <!-- surname -->
           <div class="form-group">
             <label>Apellido del usuario</label>
-            <input type="text" class="form-control form-control-line" [(ngModel)]="usuario.apellido" name="apellido">
+            <input type="text"  required  class="form-control form-control-line" [(ngModel)]="usuario.apellido" name="apellido">
             <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['apellido'].errors">
-              Es necesario introducir un Apellido</span>
+              Este campo no puede quedar vacio</span>
           </div>
           <!-- surname -->
 
           <!-- email -->
           <div class="form-group">
-            <input type="email" id="example-email2" name="example-email" class="form-control" placeholder="Email"
+            <input type="email"  required email id="example-email2" name="example-email" class="form-control" placeholder="Email"
               [(ngModel)]="usuario.email" name="email">
             <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['email'].errors">
-              Email es un campo necesario</span>
+              Este campo no puede quedar vacio</span>
           </div>
           <!-- email -->
 
           <!-- password -->
           <div class="form-group">
             <label>Password</label>
-            <input type="text" class="form-control form-control-line" value="" [(ngModel)]="usuario.password"
+            <input type="text"  required  class="form-control form-control-line" value="" [(ngModel)]="usuario.password"
               name="password">
             <span class="text-danger animated fadeIn" *ngIf="f.submitted && f.controls['password'].errors">
-              Necesita al menos 5 caracteres
+              Debes escribir un nuevo Password o puedes conservar el antiguo.
             </span>
           </div>
           <!-- password -->

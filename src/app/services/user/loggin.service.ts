@@ -47,7 +47,7 @@ export class LogginService {
     };
 
     if (localStorage.getItem('token')) {
-      const myToken = localStorage.getItem('token');
+      const myToken = JSON.parse(localStorage.getItem('token'));
       console.log('Token', myToken);
       return this.http.put(URL, { json: JSON.stringify(datos), Autorization: myToken });
     }
