@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
 
 
   constructor(private login: LogginService, private route: Router) {
-    if (localStorage.getItem('email')) {
-      this.usuario.email = localStorage.getItem('email');
-    }
+
   }
 
   ngOnInit() {

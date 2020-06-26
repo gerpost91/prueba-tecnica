@@ -34,6 +34,33 @@ export class LogginService {
 
 
   /********************
+   inicio de session
+   ********************/
+  editUser(usuario: UsuarioLogin) {
+    const URL = 'http://www.calypsotech.it/api/user/update';
+
+    const datos = {
+      name: usuario.nombre,
+      surname: usuario.apellido,
+      email: usuario.email,
+      password: usuario.password
+    };
+
+    if (localStorage.getItem('token')) {
+      const myToken = localStorage.getItem('token');
+      console.log('Token', myToken);
+      return this.http.put(URL, { json: JSON.stringify(datos), Autorization: myToken });
+    }
+    else {
+      console.log('No se ha proporcionado ningun token');
+      return;
+    }
+
+  }
+
+
+
+  /********************
     inicio de session
     ********************/
   logIn(usuario: UsuarioLogin) {

@@ -3,6 +3,7 @@ import { UsuarioLogin } from '../models/usuario.login';
 import { NgForm } from '@angular/forms';
 import { LogginService } from '../services/services.index';
 import { Router } from '@angular/router';
+declare function init_plugins();
 
 
 @Component({
@@ -21,6 +22,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    init_plugins();
     this.usuario = new UsuarioLogin();
   }
 
