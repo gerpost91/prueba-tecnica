@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { UserService } from '../../services/services.index';
+import { UserService, LogginService } from '../../services/services.index';
 import { IUser } from '../../models/user';
+import { UsuarioLogin } from '../../models/usuario.login';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-user',
@@ -10,21 +12,37 @@ import { IUser } from '../../models/user';
 })
 export class EditUserComponent {
 
-  usuario: IUser;
+  usuario: UsuarioLogin;
+  errorMessage: boolean;
+  succesMessage: boolean;
+  terminos = false;
 
-  constructor(private user: UserService) {
 
+
+  constructor(private login: LogginService) {
+
+
+  }
+
+
+  enviar(form: NgForm) {
+
+    if (form.invalid) {
+      return;
+    }
+
+    this.login.editUser(this.usuario).subscribe(resp => {
+      console.log('usuario actualizado');
+      this.succesMessage = true;
+    }, (err) => {
+      this.errorMessage = true;
+    }
+
+    );
 
   }
 
 
-  getUser(id: number) {
-    this.user.getUser(id).subscribe((data: any) => {
-      this.usuario = data.user;
-      console.log('data', this.usuario);
-    });
-
-  }
 
 
 }
