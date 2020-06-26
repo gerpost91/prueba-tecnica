@@ -9,7 +9,7 @@ Aplicacion dashboard de ejemplo de consumo de una API con angular 9 y bootstrap.
 
 Para utilizar, es necesario tener instalado: nodeJS version 10 o superior y el angular CLI version 9.1 para un correcto funcionamiento.
 
-## Instrucciones de usdo
+## Instrucciones de uso he instlacion
 
 1- Descargue o cone el repositorio en la versión mas reciente de su rama maestra.
 
