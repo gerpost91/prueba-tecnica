@@ -1,27 +1,17 @@
 # AdminDashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.8.
+Este proyecto se generó con [Angular CLI] (https://github.com/angular/angular-cli) versión 9.1.8.
 
-## Development server
+## Descripcion
+Aplicacion dashboard de ejemplo de consumo de una API con angular 9 y bootstrap.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Requerimientos
 
-## Code scaffolding
+Para utilizar, es necesario tener instalado: nodeJS version 10 o superior y el angular CLI version 9.1 para un correcto funcionamiento.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instrucciones de usdo
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1- Descargue o cone el repositorio en la versión mas reciente de su rama maestra.
+2-navegue hasta la carpeta donde esta guardado el proyecto, a continuacion ejecute el comando: "npm intall", esto descargara todas las dependencias necesarias.
+3- cuando las dependencias esten ya descasgadas , ejecute el comando "ng serve -o" para abrir el proyecto.
+4- en caso de error por falta de alguna dependencia de descargarla individualmente con su respectivo comando npm
